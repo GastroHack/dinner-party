@@ -10,7 +10,7 @@ export const LogoWrapper = styled(RouterLink)`
 
   position: sticky;
   align-self: baseline;
-  top: 20px;
+  top: 16px;
   left: 22px;
 
   .logo {

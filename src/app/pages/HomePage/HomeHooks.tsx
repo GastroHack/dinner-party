@@ -29,13 +29,14 @@ function HomeHooks() {
         </TopWrapper>
 
         <BottomWrapper>
-          <p></p>
-          <div>have a seat at</div>
-          <div>every table you want</div>
-
           <ButtonAbout>
             <StyledLinkAbout to="/about">{text}</StyledLinkAbout>
           </ButtonAbout>
+
+          <TextWrapper>
+            <div>have a seat at</div>
+            <div>every table you want</div>
+          </TextWrapper>
 
           <ButtonSeat>
             <StyledLink to="/findSeat">FIND ME A SEAT</StyledLink>
@@ -88,6 +89,14 @@ const BottomWrapper = styled.div`
   height: 100vh;
 `;
 
+const TextWrapper = styled.div`
+  font-size: 25px;
+  line-height: 32px;
+  position: absolute;
+  bottom: 24vh;
+  left: 30vh;
+`;
+
 const SpinnerWrapper = styled.div``;
 
 const PlaceHolder = styled.div`
@@ -117,7 +126,9 @@ const ButtonSeat = styled.div`
 `;
 
 const ButtonAbout = styled.div`
-  margin-top: 90px;
+  position: absolute;
+  bottom: 35vh;
+  right: 75vh;
   border-style: solid;
 `;
 
@@ -127,10 +138,10 @@ const ArrowWrapper = styled.div`
 
 export const StyledLinkAbout = styled(RouterLink)`
   font-family: 'MatterRegular';
-  font-size: 40px;
+  font-size: 20px;
   color: black;
-  padding: 0 7px 0 7px;
-  line-height: 50px;
+  padding: 0 35px 0 7px;
+  line-height: 31px;
   white-space: pre-line;
   text-decoration: none;
   text-align: center;

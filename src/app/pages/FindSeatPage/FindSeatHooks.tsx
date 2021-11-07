@@ -60,8 +60,7 @@ function FindSeatHooks({ tableActions }) {
     return (
       <Wrapper>
         <LogoWrapper to="/">
-          <LogoTextUp>DINNER</LogoTextUp>
-          <LogoTextDown>PARTY</LogoTextDown>
+          <LogoTextUp>EATING</LogoTextUp>
         </LogoWrapper>
         <Wrapper>
           <div>
@@ -100,7 +99,6 @@ const Wrapper = styled.main`
   align-items: center;
 
   min-height: 320px;
-  margin-top: 85px;
 `;
 
 const SpinnerWrapper = styled.div``;
