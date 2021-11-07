@@ -11,7 +11,7 @@ export function CreateFindSeatPage() {
         <meta name="description" content="Find a Seat Page" />
       </Helmet>
 
-      <PageWrapper>
+      <PageWrapper className="bg-blue">
         <ConnectedFindSeatHooks />
       </PageWrapper>
     </>
