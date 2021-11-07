@@ -5,8 +5,7 @@ import ConnectedHomeHooks from './HomeHooks';
 import { useEffect } from 'react';
 
 export function HomePage() {
-
-  useEffect(()  => {
+  useEffect(() => {
     document.body.classList.add('bg-green');
 
     return () => {
