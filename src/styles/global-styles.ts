@@ -27,8 +27,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   #root {
-    display: flex;
-    min-height: 100vh;
+    // display: flex;
+    // min-height: 100vh;
   }
   
   .bg-green {
