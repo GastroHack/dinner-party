@@ -1,9 +1,9 @@
 import firebase from 'firebase/compat';
 
-// import 'firebase/auth';
-// import 'firebase/storage';
-// import 'firebase/analytics';
-// import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/storage';
+import 'firebase/analytics';
+import 'firebase/firestore';
 
 const config = {
   apiKey: 'AIzaSyDbLUu41oDI2OWN1v8akr6JwGlBTCX21f8',
@@ -16,10 +16,10 @@ const config = {
 };
 
 firebase.initializeApp(config);
-// firebase.analytics();
+firebase.analytics();
 
-// export const auth = firebase.auth();
-// export const storage = firebase.storage().ref();
-// export const firestore = firebase.firestore();
+export const auth = firebase.auth();
+export const storage = firebase.storage().ref();
+export const firestore = firebase.firestore();
 
 export default firebase;
