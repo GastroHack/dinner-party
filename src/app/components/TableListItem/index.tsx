@@ -5,7 +5,7 @@ const TableListItem = ({ table }) => (
   <Wrapper>
     <h2 style={{ marginTop: 0 }}>{table?.firstName} opened a table</h2>
     <h3>Shopping list</h3>
-    <ul>
+    <ul style={{ marginTop: 0 }}>
       <li>{table?.shoppingList}</li>
     </ul>
     <h3>When?</h3>
@@ -47,4 +47,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  width: 63vh;
+  height: 87vh;
 `;

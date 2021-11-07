@@ -14,7 +14,7 @@ import { ReactComponent as Arrow } from './images/ArrowDown.svg';
 function HomeHooks() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
-  const text = 'ABOUT THE \n   CONCEPT';
+  const text = 'ABOUT THE \n CONCEPT';
 
   if (!isLoading) {
     return (
@@ -28,6 +28,11 @@ function HomeHooks() {
             <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
           </ButtonTop>
         </TopWrapper>
+
+        <TitleWrapper>
+          <TitleUp>DINNER</TitleUp>
+          <TitleDown>PARTY</TitleDown>
+        </TitleWrapper>
 
         <BottomWrapper>
           <ButtonAbout>
@@ -57,7 +62,7 @@ function HomeHooks() {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <img src={spinner} alt="loading" width="28" height="28" />
+          <img src={spinner} alt="loading" width="40" height="40" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -90,6 +95,32 @@ const BottomWrapper = styled.div`
   height: 100vh;
 `;
 
+const TitleWrapper = styled.div`
+  position: relative;
+  top: 8vh;
+  right: 9vh;
+`;
+
+export const TitleUp = styled.div`
+  font-family: 'MatterRegular';
+  font-size: 70px;
+  color: black;
+  padding: 0 7px 0 7px;
+  line-height: 90px;
+  border-style: solid;
+`;
+
+export const TitleDown = styled.div`
+  font-family: 'MatterRegular';
+  font-size: 70px;
+  color: black;
+  padding: 0 7px 0 7px;
+  margin-top: 2px;
+  line-height: 90px;
+  border-style: solid;
+  width: 228px;
+`;
+
 const TextWrapper = styled.div`
   font-size: 25px;
   line-height: 32px;
@@ -99,7 +130,7 @@ const TextWrapper = styled.div`
 `;
 
 const SpinnerWrapper = styled.div`
-  margin-bottom: 20vh;
+  margin-bottom: 20px;
 `;
 
 const PlaceHolder = styled.div`

@@ -40,6 +40,7 @@ export default function CustomField(props) {
 const StyledInput = styled.input`
   width: 230px;
   height: 30px;
+  border-width: 2px;
 `;
 
 const ErrorWrapper = styled.div`
