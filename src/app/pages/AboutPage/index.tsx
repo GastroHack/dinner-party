@@ -7,7 +7,7 @@ export function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>Home Page</title>
+        <title>About Page</title>
         <meta name="description" content="About Page" />
       </Helmet>
       <PageWrapper>

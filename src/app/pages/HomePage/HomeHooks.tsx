@@ -5,7 +5,7 @@ import Connector from '../../../utils/connector';
 import LoadingIcons from 'react-loading-icons';
 import { StyledLink } from '../../components/StyledLink';
 
-function AboutHooks() {
+function HomeHooks() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
 
@@ -13,25 +13,15 @@ function AboutHooks() {
     return (
       <Wrapper>
         <Wrapper>
-          <p>
-            Tired of dining alone? In love with cooking? Tremendous fear of
-            meeting people in person? Well this could be exactly your platform.
-            Here you can meet people, all from the comfort of your own dining
-            room. Why go out to a restaurant, when you yourself are the best
-            chef? Plenty of challenges provided by different users will push
-            your limits and capabilities in the kitchen to unthinkable amounts.
-            Spice up your cooking skills and see what tasty preparations other
-            people can come up with.
-          </p>
-          <p>
-            Never dine alone again, but rather have the whole world right here,
-            on your dining table.
-          </p>
           <ButtonWrapper>
             <StyledLink to="/createTable">Open a Table</StyledLink>
           </ButtonWrapper>
+          <p></p>
+          <div>have a seat at</div>
+          <div>every table you want</div>
+
           <ButtonWrapper>
-            <StyledLink to="/findSeat">Join a Table</StyledLink>
+            <StyledLink to="/findSeat">Find me a Seat</StyledLink>
           </ButtonWrapper>
         </Wrapper>
       </Wrapper>
@@ -48,16 +38,16 @@ function AboutHooks() {
   );
 }
 
-const ConnectedAboutHooks = props => (
+const ConnectedHomeHooks = props => (
   // @ts-ignore
   <Connector>
     {({ actions, state }) => (
-      <AboutHooks tableActions={actions.table} state={state} {...props} />
+      <HomeHooks tableActions={actions.table} state={state} {...props} />
     )}
   </Connector>
 );
 
-export default ConnectedAboutHooks;
+export default ConnectedHomeHooks;
 
 const Wrapper = styled.main`
   height: 60vh;

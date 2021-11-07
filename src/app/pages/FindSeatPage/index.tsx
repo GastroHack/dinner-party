@@ -1,24 +1,18 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { NavBar } from 'app/components/NavBar';
-import { Masthead } from './Masthead';
-import { Features } from './Features';
 import { PageWrapper } from 'app/components/PageWrapper';
+import ConnectedFindSeatHooks from './FindSeatHooks';
 
-export function HomePage() {
+export function CreateFindSeatPage() {
   return (
     <>
       <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
+        <title>Find Seat Page</title>
+        <meta name="description" content="Find a Seat Page" />
       </Helmet>
-      <NavBar />
+
       <PageWrapper>
-        <Masthead />
-        <Features />
+        <ConnectedFindSeatHooks />
       </PageWrapper>
     </>
   );

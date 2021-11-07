@@ -8,6 +8,7 @@ import { tableConverter } from '../data-contracts/Table';
 const CREATE_TABLE = 'CREATE_TABLE';
 const FETCH_TABLE = 'FETCH_TABLE';
 const FETCH_TABLES = 'FETCH_TABLES';
+const FETCH_TABLES_NEW = 'FETCH_TABLES_NEW';
 const UPDATE_TABLE = 'UPDATE_TABLE';
 
 const initialState = {
@@ -68,6 +69,29 @@ export const fetchTable = table => dispatch =>
     }
   });
 
+export const fetchTablesNew = () => dispatch => {
+  return new Promise<void>(async (resolve, reject) => {
+    const tables = [];
+    try {
+      tableRef.get().then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          // @ts-ignore
+          tables.push(doc.data());
+        });
+        resolve();
+        dispatch({
+          type: FETCH_TABLES_NEW,
+          tables,
+        });
+      });
+      // @ts-ignore
+      resolve(tables);
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
+
 export const fetchTables = () => dispatch => {
   const tables = [];
   tableRef.get().then(querySnapshot => {
@@ -76,7 +100,6 @@ export const fetchTables = () => dispatch => {
       // @ts-ignore
       tables.push(doc.data());
     });
-
     dispatch({
       type: FETCH_TABLES,
       payload: tables,
@@ -107,6 +130,7 @@ export const actions = {
   createTable,
   fetchTable,
   fetchTables,
+  fetchTablesNew,
   updateTable,
 };
 
@@ -117,6 +141,14 @@ const ACTION_HANDLERS = {
   [CREATE_TABLE]: (state, { table }) => ({
     ...state,
     table,
+  }),
+  [FETCH_TABLES]: (state, { tables }) => ({
+    ...state,
+    tables,
+  }),
+  [FETCH_TABLES_NEW]: (state, { tables }) => ({
+    ...state,
+    tables,
   }),
 };
 

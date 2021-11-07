@@ -1,5 +1,5 @@
 /**
- * Asynchronously loads the component for HomePage
+ * Asynchronously loads the component for HomePage_1
  */
 
 import * as React from 'react';
@@ -15,9 +15,9 @@ const LoadingWrapper = styled.div`
   justify-content: center;
 `;
 
-export const HomePage = lazyLoad(
+export const CreateFindSeatPage = lazyLoad(
   () => import('./index'),
-  module => module.HomePage,
+  module => module.CreateFindSeatPage,
   {
     fallback: (
       <LoadingWrapper>
