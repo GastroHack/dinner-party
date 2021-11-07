@@ -7,6 +7,7 @@ import TableList from '../../components/TableList';
 import { getFirebase } from 'react-redux-firebase';
 import { LogoWrapper } from '../../components/LogoWrapper';
 import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
+import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
 
 // TODO Refactor when possible
 function FindSeatHooks({ tableActions }) {
@@ -74,7 +75,7 @@ function FindSeatHooks({ tableActions }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <LoadingIcons.Puff stroke="black" speed=".5" />
+          <img src={spinner} alt="loading" width="28" height="28" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -101,4 +102,6 @@ const Wrapper = styled.main`
   min-height: 320px;
 `;
 
-const SpinnerWrapper = styled.div``;
+const SpinnerWrapper = styled.div`
+  margin-bottom: 20vh;
+`;

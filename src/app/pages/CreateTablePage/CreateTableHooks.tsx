@@ -13,6 +13,7 @@ import LoadingIcons from 'react-loading-icons';
 import { LogoWrapper } from '../../components/LogoWrapper';
 import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
 import { StyledLink } from '../../components/StyledLink';
+import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
 
 function CreateTableHooks({ tableActions, state }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -189,7 +190,7 @@ function CreateTableHooks({ tableActions, state }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <LoadingIcons.Puff stroke="black" speed=".5" />
+          <img src={spinner} alt="loading" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>

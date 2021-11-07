@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 
 const TableListItem = ({ table }) => (
   <Wrapper>
-    <h2 style={{ marginTop: 0 }}>{table?.firstName} openned a table</h2>
+    <h2 style={{ marginTop: 0 }}>{table?.firstName} opened a table</h2>
     <h3>Shopping list</h3>
     <ul>
       <li>{table?.shoppingList}</li>

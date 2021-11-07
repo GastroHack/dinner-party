@@ -8,6 +8,8 @@ import { LogoWrapper } from '../../components/LogoWrapper';
 import { LogoTextUp, LogoTextDown } from '../../components/LogoText';
 import { Link as RouterLink } from 'react-router-dom';
 
+import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
+
 import { ReactComponent as Arrow } from './images/ArrowDown.svg';
 
 function HomeHooks() {
@@ -56,7 +58,7 @@ function HomeHooks() {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <LoadingIcons.Puff stroke="black" speed=".5" />
+          <img src={spinner} alt="loading" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -97,7 +99,9 @@ const TextWrapper = styled.div`
   left: 30vh;
 `;
 
-const SpinnerWrapper = styled.div``;
+const SpinnerWrapper = styled.div`
+  height: 50px;
+`;
 
 const PlaceHolder = styled.div`
   margin-right: 17px;
