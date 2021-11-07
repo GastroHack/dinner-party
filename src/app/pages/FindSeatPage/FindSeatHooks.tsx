@@ -5,6 +5,8 @@ import Connector from '../../../utils/connector';
 import LoadingIcons from 'react-loading-icons';
 import TableList from '../../components/TableList';
 import { getFirebase } from 'react-redux-firebase';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
 
 // TODO Refactor when possible
 function FindSeatHooks({ tableActions }) {
@@ -67,6 +69,10 @@ function FindSeatHooks({ tableActions }) {
   }
   return (
     <Wrapper>
+      <LogoWrapper>
+        <LogoTextUp>DINNER</LogoTextUp>
+        <LogoTextDown>PARTY</LogoTextDown>
+      </LogoWrapper>
       <Wrapper>
         <div>
           <TableList tables={tables} />

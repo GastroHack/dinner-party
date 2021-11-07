@@ -11,7 +11,7 @@ export function CreateTablePage() {
         <meta name="description" content="Create a Table Page" />
       </Helmet>
 
-      <PageWrapper>
+      <PageWrapper className="bg-green">
         <ConnectedCreateTableHooks />
       </PageWrapper>
     </>

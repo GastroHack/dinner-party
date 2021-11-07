@@ -10,6 +10,9 @@ import CustomField from './components/CustomField';
 
 import * as Yup from 'yup';
 import LoadingIcons from 'react-loading-icons';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
+import { StyledLink } from '../../components/StyledLink';
 
 function CreateTableHooks({ tableActions, state }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +35,15 @@ function CreateTableHooks({ tableActions, state }) {
   if (!isLoading) {
     return (
       <Wrapper>
+        <TopWrapper>
+          <LogoWrapper>
+            <LogoTextUp>DINNER</LogoTextUp>
+            <LogoTextDown>PARTY</LogoTextDown>
+          </LogoWrapper>
+          <ButtonTop>
+            <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
+          </ButtonTop>
+        </TopWrapper>
         <Wrapper>
           <Formik
             initialValues={{
@@ -196,6 +208,13 @@ const ConnectedCreateTableHooks = props => (
 export default ConnectedCreateTableHooks;
 
 const Wrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FormSupport = styled.main`
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -212,9 +231,7 @@ const StarSpan = styled.span`
 
 const SpinnerWrapper = styled.div``;
 
-const ButtonWrapper = styled.div`
-  margin-top: 90px;
-`;
+const ButtonWrapper = styled.div``;
 
 const StyledButton = styled.button`
   text-decoration: none;
@@ -240,4 +257,18 @@ const FieldWrapper = styled.div`
   align-items: flex-start;
   display: flex;
   margin-bottom: 10px;
+`;
+
+const TopWrapper = styled.div`
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+`;
+
+const ButtonTop = styled.div`
+  position: sticky;
+  align-self: start;
+  align-items: flex-start;
 `;

@@ -4,6 +4,8 @@ import Connector from '../../../utils/connector';
 
 import LoadingIcons from 'react-loading-icons';
 import { StyledLink } from '../../components/StyledLink';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
 
 function AboutHooks() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -12,6 +14,10 @@ function AboutHooks() {
   if (!isLoading) {
     return (
       <Wrapper>
+        <LogoWrapper>
+          <LogoTextUp>DINNER</LogoTextUp>
+          <LogoTextDown>PARTY</LogoTextDown>
+        </LogoWrapper>
         <Wrapper>
           <p>
             Tired of dining alone? In love with cooking? Tremendous fear of

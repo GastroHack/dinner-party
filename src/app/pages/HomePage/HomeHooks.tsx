@@ -4,6 +4,8 @@ import Connector from '../../../utils/connector';
 
 import LoadingIcons from 'react-loading-icons';
 import { StyledLink } from '../../components/StyledLink';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextUp, LogoTextDown } from '../../components/LogoText';
 
 function HomeHooks() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -12,17 +14,24 @@ function HomeHooks() {
   if (!isLoading) {
     return (
       <Wrapper>
+        <TopWrapper>
+          <LogoWrapper>
+            <LogoTextUp>DINNER</LogoTextUp>
+            <LogoTextDown>PARTY</LogoTextDown>
+          </LogoWrapper>
+          <ButtonTop>
+            <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
+          </ButtonTop>
+        </TopWrapper>
+
         <Wrapper>
-          <ButtonWrapper>
-            <StyledLink to="/createTable">Open a Table</StyledLink>
-          </ButtonWrapper>
           <p></p>
           <div>have a seat at</div>
           <div>every table you want</div>
 
-          <ButtonWrapper>
+          <ButtonBottom>
             <StyledLink to="/findSeat">Find me a Seat</StyledLink>
-          </ButtonWrapper>
+          </ButtonBottom>
         </Wrapper>
       </Wrapper>
     );
@@ -50,17 +59,30 @@ const ConnectedHomeHooks = props => (
 export default ConnectedHomeHooks;
 
 const Wrapper = styled.main`
-  height: 60vh;
+  margin-top: 0px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 320px;
-  margin-top: 85px;
 `;
 
 const SpinnerWrapper = styled.div``;
 
-const ButtonWrapper = styled.div`
+const ButtonTop = styled.div`
+  position: sticky;
+  align-self: start;
+  align-items: flex-start;
+`;
+
+const TopWrapper = styled.div`
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ButtonBottom = styled.div`
   margin-top: 90px;
 `;
