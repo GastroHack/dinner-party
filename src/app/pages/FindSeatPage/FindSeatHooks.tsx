@@ -94,11 +94,11 @@ const ConnectedFindSeatHooks = props => (
 export default ConnectedFindSeatHooks;
 
 const Wrapper = styled.main`
-  height: 60vh;
+  // height: 60vh;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+  align-items: center;
+  
   min-height: 320px;
   margin-top: 85px;
 `;
