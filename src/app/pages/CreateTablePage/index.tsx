@@ -5,8 +5,7 @@ import ConnectedCreateTableHooks from './CreateTableHooks';
 import { useEffect } from 'react';
 
 export function CreateTablePage() {
-
-  useEffect(()  => {
+  useEffect(() => {
     document.body.classList.add('bg-green');
 
     return () => {

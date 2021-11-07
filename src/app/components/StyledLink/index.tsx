@@ -8,8 +8,6 @@ export const StyledLink = styled(RouterLink)`
   padding: 0 7px 0 7px;
   line-height: 50px;
   border-style: solid;
-
   text-decoration: none;
-
   text-align: center;
 `;
