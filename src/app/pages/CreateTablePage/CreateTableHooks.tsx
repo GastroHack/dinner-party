@@ -44,7 +44,8 @@ function CreateTableHooks({ tableActions, state }) {
             <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
           </ButtonTop>
         </TopWrapper>
-        <Wrapper>
+        <FormikWrapper>
+          <Header>YOU ARE OPENING A TABLE</Header>
           <Formik
             initialValues={{
               shoppingList: '',
@@ -88,89 +89,93 @@ function CreateTableHooks({ tableActions, state }) {
             {({ isSubmitting }) => (
               <Form>
                 <FormWrapper>
-                  <FieldWrapper>
-                    <label htmlFor="shoppingList">
-                      Shopping List<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="text"
-                      name="shoppingList"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <ShoppingListWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="shoppingList">shopping list</label>
+                      <CustomField
+                        type="text"
+                        name="shoppingList"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </ShoppingListWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="dinnerDate">
-                      Dinner Date<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="date"
-                      name="dinnerDate"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <DinnerDateWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="dinnerDate">date?</label>
+                      <CustomField
+                        type="date"
+                        name="dinnerDate"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </DinnerDateWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="dinnerTime">
-                      Dinner Time<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="time"
-                      name="dinnerTime"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <DinnerTimeWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="dinnerTime">time?</label>
+                      <CustomField
+                        type="time"
+                        name="dinnerTime"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </DinnerTimeWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="dressCode">
-                      Dress Code<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="text"
-                      name="dressCode"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <DressCodeWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="dressCode">dress code</label>
+                      <CustomField
+                        type="text"
+                        name="dressCode"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </DressCodeWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="dinnerType">Dinner Type</label>
-                    <CustomField
-                      type="text"
-                      name="dinnerType"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <DinnerTypeWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="dinnerType">dinner type</label>
+                      <CustomField
+                        type="text"
+                        name="dinnerType"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </DinnerTypeWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="tableSize">Table Size</label>
-                    <CustomField
-                      type="text"
-                      name="tableSize"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <TableSizeWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="tableSize">table size</label>
+                      <CustomField
+                        type="text"
+                        name="tableSize"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </TableSizeWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="meetUpLink">
-                      MeetUp Link<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="text"
-                      name="meetUpLink"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <MeetUpLinkWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="meetUpLink">google meet link</label>
+                      <CustomField
+                        type="text"
+                        name="meetUpLink"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </MeetUpLinkWrapper>
 
-                  <FieldWrapper>
-                    <label htmlFor="firstName">
-                      Name<StarSpan>*</StarSpan>
-                    </label>
-                    <CustomField
-                      type="text"
-                      name="firstName"
-                      customplaceholder=""
-                    />
-                  </FieldWrapper>
+                  <FirstNameWrapper>
+                    <FieldWrapper>
+                      <label htmlFor="firstName">name</label>
+                      <CustomField
+                        type="text"
+                        name="firstName"
+                        customplaceholder=""
+                      />
+                    </FieldWrapper>
+                  </FirstNameWrapper>
 
                   <ButtonWrapper>
                     <StyledButton type="submit" disabled={isSubmitting}>
@@ -181,7 +186,8 @@ function CreateTableHooks({ tableActions, state }) {
               </Form>
             )}
           </Formik>
-        </Wrapper>
+        </FormikWrapper>
+        <PlaceHolder></PlaceHolder>
       </Wrapper>
     );
   }
@@ -189,7 +195,7 @@ function CreateTableHooks({ tableActions, state }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <img src={spinner} alt="loading" width="28" height="28" />
+          <img src={spinner} alt="loading" width="40" height="40" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -207,6 +213,21 @@ const ConnectedCreateTableHooks = props => (
 
 export default ConnectedCreateTableHooks;
 
+const FormikWrapper = styled.div`
+  position: absolute;
+  top: 25vh;
+  left: 24px;
+  border: solid;
+  padding: 10px 57px 40px 10px;
+  margin-bottom: 40px;
+  background-color: white;
+`;
+
+const Header = styled.div`
+  font-size: 12pt;
+  margin-bottom: 28px;
+`;
+
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -214,28 +235,59 @@ const Wrapper = styled.main`
   justify-content: center;
 `;
 
-const StarSpan = styled.span`
-  padding-left: 2px;
-  color: red;
-`;
-
 const SpinnerWrapper = styled.div`
-  margin-bottom: 20vh;
+  margin-bottom: 20px;
 `;
 
-const ButtonWrapper = styled.div``;
+const ButtonWrapper = styled.div`
+  margin-top: 50px;
+`;
+
+const ShoppingListWrapper = styled.div`
+  margin-left: 37vh;
+`;
+const DinnerDateWrapper = styled.div`
+  margin-left: -40vh;
+  margin-top: 15px;
+`;
+const DinnerTimeWrapper = styled.div`
+  margin-left: -40vh;
+  margin-top: 15px;
+`;
+const DressCodeWrapper = styled.div`
+  margin-left: 50vh;
+  margin-top: 10px;
+`;
+const DinnerTypeWrapper = styled.div`
+  margin-left: -25vh;
+  margin-top: 8px;
+`;
+const TableSizeWrapper = styled.div`
+  margin-left: 22vh;
+  margin-top: 20px;
+`;
+const MeetUpLinkWrapper = styled.div`
+  margin-left: -33vh;
+  margin-top: 18px;
+`;
+const FirstNameWrapper = styled.div`
+  margin-left: 28vh;
+  margin-top: 10px;
+`;
 
 const StyledButton = styled.button`
+  font-family: 'MatterRegular';
+  font-size: 25px;
+  color: black;
+  padding: 0 7px 0 7px;
+  line-height: 40px;
+  border-style: solid;
   text-decoration: none;
-  background-color: #ffffff;
-  color: #333333;
-  padding: 8px 40px 8px 40px;
-  border-top: 1px solid #333333;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #333333;
-  border-radius: 3px;
   text-align: center;
+`;
+
+const PlaceHolder = styled.div`
+  height: 130vh;
 `;
 
 const FormWrapper = styled.div`

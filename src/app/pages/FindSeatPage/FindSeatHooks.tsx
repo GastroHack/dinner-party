@@ -74,7 +74,7 @@ function FindSeatHooks({ tableActions }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <img src={spinner} alt="loading" width="28" height="28" />
+          <img src={spinner} alt="loading" width="40" height="40" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -102,5 +102,5 @@ const Wrapper = styled.main`
 `;
 
 const SpinnerWrapper = styled.div`
-  margin-bottom: 20vh;
+  margin-bottom: 20px;
 `;
