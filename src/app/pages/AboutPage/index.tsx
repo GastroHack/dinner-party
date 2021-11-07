@@ -10,7 +10,7 @@ export function AboutPage() {
         <title>About Page</title>
         <meta name="description" content="About Page" />
       </Helmet>
-      <PageWrapper>
+      <PageWrapper className="bg-blue">
         <ConnectedAboutHooks />
       </PageWrapper>
     </>
