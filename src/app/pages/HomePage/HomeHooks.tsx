@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import Connector from '../../../utils/connector';
 
-import LoadingIcons from 'react-loading-icons';
 import { StyledLink } from '../../components/StyledLink';
 import { LogoWrapper } from '../../components/LogoWrapper';
 import { LogoTextUp, LogoTextDown } from '../../components/LogoText';
@@ -58,7 +57,7 @@ function HomeHooks() {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <img src={spinner} alt="loading" />
+          <img src={spinner} alt="loading" width="28" height="28" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -100,7 +99,7 @@ const TextWrapper = styled.div`
 `;
 
 const SpinnerWrapper = styled.div`
-  height: 50px;
+  margin-bottom: 20vh;
 `;
 
 const PlaceHolder = styled.div`

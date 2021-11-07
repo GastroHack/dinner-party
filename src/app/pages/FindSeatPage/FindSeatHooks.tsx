@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 import Connector from '../../../utils/connector';
 
-import LoadingIcons from 'react-loading-icons';
 import TableList from '../../components/TableList';
 import { getFirebase } from 'react-redux-firebase';
 import { LogoWrapper } from '../../components/LogoWrapper';
-import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
+import { LogoTextUp } from '../../components/LogoText';
 import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
 
 // TODO Refactor when possible

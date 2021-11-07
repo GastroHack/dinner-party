@@ -9,7 +9,6 @@ import { useHistory } from 'react-router-dom';
 import CustomField from './components/CustomField';
 
 import * as Yup from 'yup';
-import LoadingIcons from 'react-loading-icons';
 import { LogoWrapper } from '../../components/LogoWrapper';
 import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
 import { StyledLink } from '../../components/StyledLink';
@@ -190,7 +189,7 @@ function CreateTableHooks({ tableActions, state }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <img src={spinner} alt="loading" />
+          <img src={spinner} alt="loading" width="28" height="28" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -220,7 +219,9 @@ const StarSpan = styled.span`
   color: red;
 `;
 
-const SpinnerWrapper = styled.div``;
+const SpinnerWrapper = styled.div`
+  margin-bottom: 20vh;
+`;
 
 const ButtonWrapper = styled.div``;
 
