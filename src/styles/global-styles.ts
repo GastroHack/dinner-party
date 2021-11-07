@@ -11,12 +11,25 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
+    // padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
     background-color: ${p => p.theme.background};
   }
 
   body.fontLoaded {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  #root {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .bg-green {
+    background: #effff1;
+  }
+  
+  .bg-blue {
+    background: #e5efff;
   }
   
   p,

@@ -10,7 +10,7 @@ export function HomePage() {
         <title>Home Page</title>
         <meta name="description" content="About Page" />
       </Helmet>
-      <PageWrapper>
+      <PageWrapper className="bg-green">
         <ConnectedHomeHooks />
       </PageWrapper>
     </>
