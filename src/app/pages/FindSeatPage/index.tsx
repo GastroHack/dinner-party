@@ -5,8 +5,7 @@ import ConnectedFindSeatHooks from './FindSeatHooks';
 import { useEffect } from 'react';
 
 export function CreateFindSeatPage() {
-
-  useEffect(()  => {
+  useEffect(() => {
     document.body.classList.add('bg-blue');
 
     return () => {

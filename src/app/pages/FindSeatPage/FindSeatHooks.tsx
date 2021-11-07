@@ -98,7 +98,7 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   min-height: 320px;
   margin-top: 85px;
 `;
