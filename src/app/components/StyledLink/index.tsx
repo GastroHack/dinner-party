@@ -10,7 +10,6 @@ export const StyledLink = styled(RouterLink)`
   border-style: solid;
 
   text-decoration: none;
-  background-color: #ffffff;
 
   text-align: center;
 `;

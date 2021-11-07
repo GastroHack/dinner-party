@@ -3,11 +3,11 @@ import styled from 'styled-components/macro';
 
 const TableListItem = ({ table }) => (
   <Wrapper>
-    <h2 style={{marginTop: 0}}>{table?.firstName} openned a table</h2>
+    <h2 style={{ marginTop: 0 }}>{table?.firstName} openned a table</h2>
     <h3>Shopping list</h3>
-      <ul>
-          <li>{table?.shoppingList}</li>
-      </ul>
+    <ul>
+      <li>{table?.shoppingList}</li>
+    </ul>
     <h3>When?</h3>
     <div>{table?.dinnerDate}</div>
     <div>{table?.dinnerTime}</div>
@@ -17,10 +17,22 @@ const TableListItem = ({ table }) => (
     <div>{table?.dinnerType}</div>
     <h3>Table size</h3>
     <div>{table?.tableSize}</div>
-    <div style={{display: "flex", flexDirection: "column", alignItems: "end", width: "100%"}}>
-    <span style={{border: "2px solid black", padding: ".5em 1.5em"}}>
-        <a href={table?.meetUpLink} style={{color: "black", textDecoration: "none"}}>Join</a>
-    </span>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'end',
+        width: '100%',
+      }}
+    >
+      <span style={{ border: '2px solid black', padding: '.5em 1.5em' }}>
+        <a
+          href={table?.meetUpLink}
+          style={{ color: 'black', textDecoration: 'none' }}
+        >
+          Join
+        </a>
+      </span>
     </div>
     <div></div>
   </Wrapper>

@@ -56,27 +56,27 @@ function FindSeatHooks({ tableActions }) {
     }
   }, [isLoading, tableActions]);
 
-  if (isLoading) {
+  if (!isLoading) {
     return (
       <Wrapper>
+        <LogoWrapper to="/">
+          <LogoTextUp>DINNER</LogoTextUp>
+          <LogoTextDown>PARTY</LogoTextDown>
+        </LogoWrapper>
         <Wrapper>
-          <SpinnerWrapper>
-            <LoadingIcons.Puff stroke="black" speed=".5" />
-          </SpinnerWrapper>
+          <div>
+            <TableList tables={tables} />
+          </div>
         </Wrapper>
       </Wrapper>
     );
   }
   return (
     <Wrapper>
-      <LogoWrapper>
-        <LogoTextUp>DINNER</LogoTextUp>
-        <LogoTextDown>PARTY</LogoTextDown>
-      </LogoWrapper>
       <Wrapper>
-        <div>
-          <TableList tables={tables} />
-        </div>
+        <SpinnerWrapper>
+          <LoadingIcons.Puff stroke="black" speed=".5" />
+        </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
   );

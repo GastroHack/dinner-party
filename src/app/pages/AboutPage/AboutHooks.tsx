@@ -14,7 +14,7 @@ function AboutHooks() {
   if (!isLoading) {
     return (
       <Wrapper>
-        <LogoWrapper>
+        <LogoWrapper to="/">
           <LogoTextUp>DINNER</LogoTextUp>
           <LogoTextDown>PARTY</LogoTextDown>
         </LogoWrapper>

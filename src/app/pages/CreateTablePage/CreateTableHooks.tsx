@@ -36,7 +36,7 @@ function CreateTableHooks({ tableActions, state }) {
     return (
       <Wrapper>
         <TopWrapper>
-          <LogoWrapper>
+          <LogoWrapper to="/">
             <LogoTextUp>DINNER</LogoTextUp>
             <LogoTextDown>PARTY</LogoTextDown>
           </LogoWrapper>
@@ -212,16 +212,6 @@ const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const FormSupport = styled.main`
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 320px;
-  margin-top: 85px;
 `;
 
 const StarSpan = styled.span`

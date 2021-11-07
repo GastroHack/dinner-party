@@ -15,7 +15,7 @@ function HomeHooks() {
     return (
       <Wrapper>
         <TopWrapper>
-          <LogoWrapper>
+          <LogoWrapper to="/">
             <LogoTextUp>DINNER</LogoTextUp>
             <LogoTextDown>PARTY</LogoTextDown>
           </LogoWrapper>
@@ -29,9 +29,18 @@ function HomeHooks() {
           <div>have a seat at</div>
           <div>every table you want</div>
 
-          <ButtonBottom>
-            <StyledLink to="/findSeat">Find me a Seat</StyledLink>
-          </ButtonBottom>
+          <ButtonAbout>
+            <StyledLink to="/about">
+              {`
+          ABOUT THE 
+          CONCEPT
+         `}
+            </StyledLink>
+          </ButtonAbout>
+
+          <ButtonSeat>
+            <StyledLink to="/findSeat">FIND ME A SEAT</StyledLink>
+          </ButtonSeat>
         </Wrapper>
       </Wrapper>
     );
@@ -59,8 +68,8 @@ const ConnectedHomeHooks = props => (
 export default ConnectedHomeHooks;
 
 const Wrapper = styled.main`
-  margin-top: 0px;
-  height: 100%;
+  margin-top: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,6 +92,10 @@ const TopWrapper = styled.div`
   width: 100%;
 `;
 
-const ButtonBottom = styled.div`
+const ButtonSeat = styled.div`
+  margin-top: 90px;
+`;
+
+const ButtonAbout = styled.div`
   margin-top: 90px;
 `;
