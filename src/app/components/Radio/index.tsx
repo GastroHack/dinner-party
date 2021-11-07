@@ -36,7 +36,6 @@ const Wrapper = styled.div`
       margin: 0;
       display: inline-block;
       padding-left: 1.375rem;
-      padding-top: 0.0625rem;
       position: relative;
       cursor: pointer;
       font-size: 0.875rem;

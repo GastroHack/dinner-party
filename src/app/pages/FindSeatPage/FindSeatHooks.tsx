@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 import Connector from '../../../utils/connector';
 
-import LoadingIcons from 'react-loading-icons';
 import TableList from '../../components/TableList';
 import { getFirebase } from 'react-redux-firebase';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextUp } from '../../components/LogoText';
+import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
 
 // TODO Refactor when possible
 function FindSeatHooks({ tableActions }) {
@@ -54,13 +56,16 @@ function FindSeatHooks({ tableActions }) {
     }
   }, [isLoading, tableActions]);
 
-  if (isLoading) {
+  if (!isLoading) {
     return (
       <Wrapper>
+        <LogoWrapper to="/">
+          <LogoTextUp>EATING</LogoTextUp>
+        </LogoWrapper>
         <Wrapper>
-          <SpinnerWrapper>
-            <LoadingIcons.Puff stroke="black" speed=".5" />
-          </SpinnerWrapper>
+          <div>
+            <TableList tables={tables} />
+          </div>
         </Wrapper>
       </Wrapper>
     );
@@ -68,9 +73,9 @@ function FindSeatHooks({ tableActions }) {
   return (
     <Wrapper>
       <Wrapper>
-        <div>
-          <TableList tables={tables} />
-        </div>
+        <SpinnerWrapper>
+          <img src={spinner} alt="loading" width="28" height="28" />
+        </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
   );
@@ -88,13 +93,14 @@ const ConnectedFindSeatHooks = props => (
 export default ConnectedFindSeatHooks;
 
 const Wrapper = styled.main`
-  height: 60vh;
+  // height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
   min-height: 320px;
-  margin-top: 85px;
 `;
 
-const SpinnerWrapper = styled.div``;
+const SpinnerWrapper = styled.div`
+  margin-bottom: 20vh;
+`;

@@ -9,7 +9,10 @@ import { useHistory } from 'react-router-dom';
 import CustomField from './components/CustomField';
 
 import * as Yup from 'yup';
-import LoadingIcons from 'react-loading-icons';
+import { LogoWrapper } from '../../components/LogoWrapper';
+import { LogoTextDown, LogoTextUp } from '../../components/LogoText';
+import { StyledLink } from '../../components/StyledLink';
+import spinner from '../../../fonts/dinnerparty_loading_funktioniert.gif';
 
 function CreateTableHooks({ tableActions, state }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +35,15 @@ function CreateTableHooks({ tableActions, state }) {
   if (!isLoading) {
     return (
       <Wrapper>
+        <TopWrapper>
+          <LogoWrapper to="/">
+            <LogoTextUp>DINNER</LogoTextUp>
+            <LogoTextDown>PARTY</LogoTextDown>
+          </LogoWrapper>
+          <ButtonTop>
+            <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
+          </ButtonTop>
+        </TopWrapper>
         <Wrapper>
           <Formik
             initialValues={{
@@ -177,7 +189,7 @@ function CreateTableHooks({ tableActions, state }) {
     <Wrapper>
       <Wrapper>
         <SpinnerWrapper>
-          <LoadingIcons.Puff stroke="black" speed=".5" />
+          <img src={spinner} alt="loading" width="28" height="28" />
         </SpinnerWrapper>
       </Wrapper>
     </Wrapper>
@@ -196,13 +208,10 @@ const ConnectedCreateTableHooks = props => (
 export default ConnectedCreateTableHooks;
 
 const Wrapper = styled.main`
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
-  margin-top: 85px;
 `;
 
 const StarSpan = styled.span`
@@ -210,11 +219,11 @@ const StarSpan = styled.span`
   color: red;
 `;
 
-const SpinnerWrapper = styled.div``;
-
-const ButtonWrapper = styled.div`
-  margin-top: 90px;
+const SpinnerWrapper = styled.div`
+  margin-bottom: 20vh;
 `;
+
+const ButtonWrapper = styled.div``;
 
 const StyledButton = styled.button`
   text-decoration: none;
@@ -240,4 +249,18 @@ const FieldWrapper = styled.div`
   align-items: flex-start;
   display: flex;
   margin-bottom: 10px;
+`;
+
+const TopWrapper = styled.div`
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+`;
+
+const ButtonTop = styled.div`
+  position: sticky;
+  align-self: start;
+  align-items: flex-start;
 `;

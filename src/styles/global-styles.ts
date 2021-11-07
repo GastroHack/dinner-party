@@ -7,16 +7,36 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
+    font-family: MatterRegular, Helvetica, Arial, sans-serif;
+    // padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
     background-color: ${p => p.theme.background};
   }
 
   body.fontLoaded {
-    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: MatterRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  #root {
+    // display: flex;
+    // min-height: 100vh;
+  }
+  
+  .bg-green {
+    background: #effff1;
+  }
+  
+  .bg-blue {
+    background: #e5efff;
   }
   
   p,

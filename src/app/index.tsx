@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from '../styles/global-styles';
+import GlobalFonts from '../fonts/fonts';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
@@ -50,6 +51,7 @@ export function App() {
         />
         <Route component={NotFoundPage} />
       </Switch>
+      <GlobalFonts />
       <GlobalStyle />
     </BrowserRouter>
   );
