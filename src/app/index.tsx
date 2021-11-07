@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 import { CreateTablePage } from './pages/CreateTablePage/Loadable';
+import { AboutPage } from './pages/AboutPage/Loadable';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -31,6 +32,11 @@ export function App() {
 
       <Switch>
         <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + '/about'}
+          component={AboutPage}
+        />
         <Route
           exact
           path={process.env.PUBLIC_URL + '/createTable'}
