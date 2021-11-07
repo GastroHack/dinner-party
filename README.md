@@ -2,9 +2,9 @@
 
 Create virtual Dinner Parties to never cook or dine alone.
 
-## Description
+## Demo
 
-An in-depth paragraph about your project and overview of use.
+https://dinner-party-8bf96.web.app/
 
 ## Getting Started
 
