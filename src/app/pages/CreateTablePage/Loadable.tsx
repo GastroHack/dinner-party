@@ -1,5 +1,5 @@
 /**
- * Asynchronously loads the component for HomePage
+ * Asynchronously loads the component for HomePage_1
  */
 
 import * as React from 'react';
