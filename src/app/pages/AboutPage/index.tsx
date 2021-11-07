@@ -5,8 +5,7 @@ import ConnectedAboutHooks from './AboutHooks';
 import { useEffect } from 'react';
 
 export function AboutPage() {
-
-  useEffect(()  => {
+  useEffect(() => {
     document.body.classList.add('bg-blue');
 
     return () => {

@@ -14,11 +14,23 @@ function AboutHooks() {
   if (!isLoading) {
     return (
       <Wrapper>
-        <LogoWrapper to="/">
-          <LogoTextUp>DINNER</LogoTextUp>
-          <LogoTextDown>PARTY</LogoTextDown>
-        </LogoWrapper>
-        <Wrapper>
+        <TopWrapper>
+          <LogoWrapper to="/">
+            <LogoTextUp>DINNER</LogoTextUp>
+            <LogoTextDown>PARTY</LogoTextDown>
+          </LogoWrapper>
+
+          <ButtonTopWrapper>
+            <ButtonTop>
+              <StyledLink to="/createTable">OPEN A TABLE</StyledLink>
+            </ButtonTop>
+            <ButtonDown>
+              <StyledLink to="/findSeat">JOIN A TABLE</StyledLink>
+            </ButtonDown>
+          </ButtonTopWrapper>
+        </TopWrapper>
+
+        <TextWrapper>
           <p>
             Tired of dining alone? In love with cooking? Tremendous fear of
             meeting people in person? Well this could be exactly your platform.
@@ -33,13 +45,7 @@ function AboutHooks() {
             Never dine alone again, but rather have the whole world right here,
             on your dining table.
           </p>
-          <ButtonWrapper>
-            <StyledLink to="/createTable">Open a Table</StyledLink>
-          </ButtonWrapper>
-          <ButtonWrapper>
-            <StyledLink to="/findSeat">Join a Table</StyledLink>
-          </ButtonWrapper>
-        </Wrapper>
+        </TextWrapper>
       </Wrapper>
     );
   }
@@ -66,17 +72,45 @@ const ConnectedAboutHooks = props => (
 export default ConnectedAboutHooks;
 
 const Wrapper = styled.main`
-  height: 60vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   min-height: 320px;
-  margin-top: 85px;
+`;
+
+const TextWrapper = styled.div`
+  margin-top: 50px;
+  width: 70vh;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 `;
 
 const SpinnerWrapper = styled.div``;
 
-const ButtonWrapper = styled.div`
-  margin-top: 90px;
+const ButtonTopWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ButtonTop = styled.div`
+  position: sticky;
+  align-self: start;
+  align-items: flex-start;
+`;
+
+const ButtonDown = styled.div`
+  position: sticky;
+  align-self: start;
+  align-items: flex-start;
+  margin-top: 14px;
+`;
+
+const TopWrapper = styled.div`
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;
